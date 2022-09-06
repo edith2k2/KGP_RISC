@@ -1,0 +1,9 @@
+label:
+addi $t0, 23
+addi $t1, 75
+add $t1, $t0
+sw $t1, (2)$t3
+lw $t3, (2)$t3
+comp $t3, $t0
+add $t0, $t3
+bz $t0, label

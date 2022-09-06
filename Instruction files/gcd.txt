@@ -1,0 +1,33 @@
+addi $t0, 52
+addi $t1, 39 
+
+bz $t0, return_b 
+
+
+while:
+           bz $t1, return_a
+           and $t2, $zero
+           add $t2, $t1
+           comp $t3, $t0
+           add $t2, $t3
+           bltz $t2, aGb
+           comp $t3, $t0
+           add $t1, $t3
+           b while
+
+aGb: 
+        comp $t4, $t1
+        add $t0, $t4
+        b while
+
+return_a:
+         and $t4, $zero
+         add $t4, $t0
+         b exit
+
+return_b:
+         and $t4, $zero
+         add $t4, $t1
+         b exit
+
+exit:
